@@ -3,8 +3,12 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 CHROMA_PATH = "chroma"
+OpenAI_key = os.environ.get("OPEN_AI_KEY")
 
 PROMPT_TEMPLATE = """
 Answer the question based only on the following context:
