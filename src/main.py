@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 import os
 import shutil
 
+
+
+
 load_dotenv()
 openai.api_key = os.environ['OPENAI_API_KEY']
 
