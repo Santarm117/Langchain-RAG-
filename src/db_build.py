@@ -9,8 +9,6 @@ import os
 import shutil
 
 
-
-
 load_dotenv()
 openai.api_key = os.environ['OPENAI_API_KEY']
 
@@ -52,7 +50,7 @@ def save_to_chroma(chunks: list[Document]):
     db = Chroma.from_documents(
         chunks, OpenAIEmbeddings(), persist_directory=CHROMA_PATH
     )
-    db.persist()
+    
     print(f"Saved {len(chunks)} chunks to {CHROMA_PATH}.")
 
 if __name__ == "__main__":
